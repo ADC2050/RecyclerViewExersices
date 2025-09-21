@@ -5,7 +5,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView; // Assuming you have a TextView in your item layout
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -29,10 +28,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
     private OnItemClickListener itemClickListener;
 
     // Constructor to pass in your data
-    public Adapter(List<Person> dataList, SecondActivity SecondActivity) {
+    public Adapter(List<Person> dataList, StudentListFragment StudentListFragment) {
         this.personList = dataList;
-        this.deleteListener = SecondActivity; // Assign the listener
-        this.itemClickListener = SecondActivity; // Assign the listener
+        this.deleteListener = StudentListFragment; // Assign the listener
+        this.itemClickListener = StudentListFragment; // Assign the listener
     }
 
     @NonNull
