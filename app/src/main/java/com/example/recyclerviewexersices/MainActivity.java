@@ -1,6 +1,7 @@
 package com.example.recyclerviewexersices;// MainActivity.java
 
 import android.os.Bundle;
+import androidx.appcompat.widget.Toolbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -11,6 +12,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationFragment.OnNavigationItemSelectedListener {
+
+    androidx.appcompat.widget.Toolbar toolbar;
 
     public static ArrayList<Person> personList = new ArrayList<>();
 
@@ -23,6 +26,13 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationF
         if (savedInstanceState == null) {
             loadFragment(new HomeFragment());
         }
+
+        intitViews();
+    }
+
+    private void intitViews() {
+        toolbar = findViewById(R.id.my_toolbar);
+        setSupportActionBar(toolbar);
     }
 
     public void onNavigationItemSelected(int itemId) {
